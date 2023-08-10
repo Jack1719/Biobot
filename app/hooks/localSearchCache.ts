@@ -5,6 +5,7 @@ export default function useLocalSearchCache() {
   const localSearchCacheRef = useRef<Map<string, KitData[]>>(new Map());
   const updateSearchCacheData = useCallback(
     (searchData: SearchData) => {
+      if (!searchData.query) return;
       // check if new data contains existing data, if so, remove the existing data
       localSearchCacheRef.current.forEach((value, key) => {
         if (key.includes(searchData.query)) {
