@@ -1,4 +1,4 @@
-import data from '../../../assets/data.json'
+import data from '../../assets/data.json'
 export async function GET(request: Request) {
   // return filterd data based on query params
   const params = new URL(request.url).searchParams
